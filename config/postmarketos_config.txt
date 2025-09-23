@@ -1,0 +1,213 @@
+# AIROS PostmarketOS Configuration
+# Device-specific configuration for Linux phones
+
+[device]
+# Automatically detected, can be overridden
+model = auto
+# Options: pinephone, librem5, oneplus6, fairphone4, etc.
+
+[display]
+# UI framework: phosh, plasma-mobile, sxmo, gnome-mobile
+ui = phosh
+# Scaling for high DPI displays
+scale = 1.5
+# Wayland or X11
+compositor = wayland
+
+[waydroid]
+# Enable Waydroid Android compatibility
+enabled = true
+# Android version to use (11, 12, 13)
+android_version = 13
+# Graphics acceleration
+gpu_acceleration = true
+# Memory allocation
+memory = 2048
+# CPU cores
+cpu_cores = 4
+# Network mode: bridge, nat
+network_mode = nat
+# Auto-start with system
+auto_start = true
+
+[microg]
+# MicroG configuration
+enabled = true
+# Signature spoofing method: native, xposed, lsposed
+spoofing_method = native
+# Google Cloud Messaging
+gcm_enabled = true
+# Location services provider
+location_backend = mozilla
+# Maps API v2 support
+maps_v2 = true
+# Google SafetyNet workaround
+safetynet_bypass = true
+# Vending (Play Store) spoofing
+vending_spoof = true
+
+[aurora_store]
+# Aurora Store configuration
+enabled = true
+# Anonymous account usage
+anonymous = true
+# Auto-update apps
+auto_update = false
+# Download path
+download_path = /home/user/Downloads
+# Installer method: root, session, native
+installer = session
+
+[ai_agent]
+# AI Agent configuration
+enabled = true
+# Network interface to bind
+bind_address = 0.0.0.0
+# HTTP API port
+http_port = 8080
+# WebSocket port
+ws_port = 8081
+# Authentication method: token, oauth, none
+auth_method = token
+# Auto-generated on first run
+auth_token = auto
+# SSL/TLS (requires certificates)
+use_ssl = false
+# Logging level: debug, info, warning, error
+log_level = info
+# Log file path
+log_file = /var/log/airos/agent.log
+
+[app_compatibility]
+# App compatibility fixer settings
+auto_fix = true
+# Monitor app crashes
+monitor_crashes = true
+# Patch APKs before installation
+pre_patch = true
+# Create library shims
+create_shims = true
+# Mock missing services
+mock_services = true
+# Database path
+database = /var/lib/airos/compatibility.db
+# Patches directory
+patches_dir = /var/lib/airos/patches
+
+[security]
+# Security settings (relaxed for development)
+allow_root_commands = true
+# Network isolation for Waydroid
+network_isolation = false
+# SELinux mode (if applicable)
+selinux = permissive
+# AppArmor profiles
+apparmor = disabled
+# Restrict AI agent to specific IPs
+allowed_ips = []
+# Rate limiting (requests per minute)
+rate_limit = 0
+
+[performance]
+# Performance tuning
+# CPU governor: performance, powersave, ondemand
+cpu_governor = ondemand
+# GPU power profile: auto, low, mid, high
+gpu_power_profile = auto
+# Background app limit
+background_limit = 4
+# Memory management
+low_memory_killer = false
+# ZRAM compression
+zram_enabled = true
+zram_size = 1024
+
+[experimental]
+# Experimental features
+# Direct framebuffer access for Waydroid
+direct_fb = false
+# Hardware video encoding
+hw_video_encode = false
+# Vulkan support
+vulkan = false
+# Desktop mode (convergence)
+desktop_mode = false
+# Multiple Waydroid instances
+multi_instance = false
+# App streaming
+app_streaming = false
+
+[backup]
+# Backup configuration
+enabled = true
+# Backup directory
+backup_dir = /var/backups/airos
+# Auto-backup before major changes
+auto_backup = true
+# Keep last N backups
+keep_backups = 5
+# Backup Waydroid data
+backup_waydroid = true
+# Backup app data
+backup_apps = true
+
+[development]
+# Development options
+# Enable verbose debugging
+debug_mode = false
+# ADB over network
+adb_network = true
+# Development endpoints
+dev_endpoints = false
+# Mock mode (no actual system changes)
+mock_mode = false
+# Crash reporting
+crash_reports = false
+# Performance profiling
+profiling = false
+
+[updates]
+# Update configuration
+# Update channel: stable, beta, nightly
+channel = stable
+# Auto-check for updates
+auto_check = true
+# Auto-download updates
+auto_download = false
+# Update server
+update_server = https://updates.airos.dev
+
+[telemetry]
+# Telemetry settings (all disabled by default)
+enabled = false
+# Anonymous usage statistics
+usage_stats = false
+# Crash reports
+crash_telemetry = false
+# App compatibility reports
+compat_reports = false
+
+# Device-specific overrides
+[device.pinephone]
+gpu_acceleration = true
+cpu_cores = 4
+memory = 2048
+scale = 2.0
+
+[device.librem5]
+gpu_acceleration = true
+cpu_cores = 4
+memory = 3072
+scale = 2.0
+
+[device.oneplus6]
+gpu_acceleration = true
+cpu_cores = 8
+memory = 4096
+scale = 2.5
+
+[device.fairphone4]
+gpu_acceleration = true
+cpu_cores = 8
+memory = 4096
+scale = 2.0

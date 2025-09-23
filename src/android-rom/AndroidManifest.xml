@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.airos.agent"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="0.1.0-alpha">
+
+    <!-- System-level permissions for AI agent -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+    <!-- System permissions (requires system app) -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.DUMP" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    
+    <!-- Root-level permissions -->
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.FACTORY_TEST" />
+    
+    <!-- Custom AI permissions -->
+    <permission
+        android:name="com.airos.permission.AI_AGENT_ACCESS"
+        android:protectionLevel="dangerous"
+        android:label="AI Agent System Access"
+        android:description="Allows AI agents to modify system components" />
+    
+    <permission
+        android:name="com.airos.permission.CODE_INJECTION"
+        android:protectionLevel="signature|privileged"
+        android:label="Runtime Code Injection"
+        android:description="Allows runtime modification of system code" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:theme="@android:style/Theme.NoDisplay">
+
+        <!-- Main AI Agent Service -->
+        <service
+            android:name=".AIAgentService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.airos.permission.AI_AGENT_ACCESS">
+            <intent-filter>
+                <action android:name="com.airos.agent.START" />
+                <action android:name="com.airos.agent.STOP" />
+            </intent-filter>
+        </service>
+
+        <!-- Boot Receiver to start service on device boot -->
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- System Monitoring Service -->
+        <service
+            android:name=".SystemMonitorService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Watchdog Service for system stability -->
+        <service
+            android:name=".WatchdogService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Code Injection Service -->
+        <service
+            android:name=".CodeInjectionService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="com.airos.permission.CODE_INJECTION" />
+
+        <!-- Settings Activity for configuration -->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="AIROS Settings"
+            android:exported="true"
+            android:theme="@android:style/Theme.Material.Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Content Provider for sharing system state -->
+        <provider
+            android:name=".SystemStateProvider"
+            android:authorities="com.airos.agent.provider"
+            android:exported="true"
+            android:permission="com.airos.permission.AI_AGENT_ACCESS" />
+
+        <!-- File Provider for secure file sharing -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.airos.agent.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>
