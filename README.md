@@ -1,6 +1,6 @@
 # Linux Smart(er) Phone
 
-> Transform your Android device into a chat-enabled machine learning Linux platform with full Android app compatibility
+> Transform your Android device into a chat-enabled machine learning Linux platform with Android app compatibility
 
 [![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)](https://github.com/M0nkeyFl0wer/linux-smarter-phone)
 [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
