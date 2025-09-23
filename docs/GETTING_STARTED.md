@@ -1,4 +1,4 @@
-# Getting Started with AIROS
+# Getting Started Linux Smarter Phone
 
 ## Choose Your Path
 
