@@ -5,7 +5,7 @@
 [![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)](https://github.com/M0nkeyFl0wer/linux-smarter-phone)
 [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
 [![Docs](https://img.shields.io/badge/Docs-Read%20Documentation-orange)](docs/)
-[![Blog](https://img.shields.io/badge/Blog-Follow%20Progress-ff69b4)](https://your-blog-url-here)
+[![Blog](https://img.shields.io/badge/Blog-Follow%20Progress-ff69b4)](https://benwest.blog)
 
 ## 🎯 Project Overview
 Linux Smart(er) Phone transforms mobile devices into machine learning collaborative development environments where chat-enabled ML agents can modify, debug, and improve the system in real-time. The project offers two main approaches:
@@ -17,20 +17,10 @@ Linux Smart(er) Phone transforms mobile devices into machine learning collaborat
 **I'm documenting my journey of transforming my personal OnePlus 7 Pro into a Linux Smart(er) Phone!** 
 
 I'll be:
-- 📝 Installing and testing on my own device (yes, my actual daily driver!)
+- 📝 Installing and testing on an older phone and using it daily
 - 🔬 Experimenting with different configurations and ML integrations
-- 📸 Documenting every step, success, and failure
-- ✍️ Publishing detailed updates on my blog
-- 🤝 Sharing all findings with the community
+- 📸 Documenting every step
 
-Follow along as I turn my OnePlus 7 Pro into the smart(er) phone I've always wanted - one that I can truly control, understand, and enhance with ML capabilities. This isn't just theory - it's a real device transformation that I'm living with daily.
-
-**Blog Updates**: I'll be posting regular updates about this journey on my blog, including:
-- Installation experiences and troubleshooting
-- App compatibility discoveries  
-- ML agent experiments
-- Daily usage reports
-- Performance comparisons
 
 ### Why Linux Smart(er) Phone?
 
@@ -105,24 +95,6 @@ docker run -it --privileged \
 # Using Waydroid on Linux desktop
 ./virtualization/setup-waydroid-desktop.sh
 ```
-
-## 📱 Supported Devices
-
-### Tier 1 - Excellent Support
-| Device | Linux Support | Android Apps | Daily Driver | Guide |
-|--------|--------------|--------------|--------------|-------|
-| OnePlus 7 Pro | ⭐⭐⭐⭐⭐ | 95% | Yes | [Guide](devices/oneplus-7-pro/README.md) |
-| PinePhone Pro | ⭐⭐⭐⭐⭐ | 85% | Yes | [Guide](devices/pinephone/README.md) |
-| Pixel 3a | ⭐⭐⭐⭐ | 90% | Yes | [Guide](devices/pixel-3a/README.md) |
-
-### Tier 2 - Good Support
-| Device | Linux Support | Android Apps | Daily Driver | Guide |
-|--------|--------------|--------------|--------------|-------|
-| Pixel 4a 5G | ⭐⭐⭐ | 85% | Maybe | [Guide](devices/pixel-4a-5g/README.md) |
-| OnePlus 6/6T | ⭐⭐⭐⭐ | 90% | Yes | [Guide](devices/oneplus-6/README.md) |
-| Fairphone 4 | ⭐⭐⭐ | 80% | Maybe | [Guide](devices/fairphone-4/README.md) |
-
-[Full device list →](install/DEVICE_SUPPORT.md)
 
 ## 🏗️ Project Workflow
 
@@ -209,7 +181,7 @@ pip3 install -r requirements.txt
 ## 📊 Current Status
 
 ### Working Features ✅
-- Ubuntu Touch installation on OnePlus 7 Pro
+- Ubuntu Touch installation 
 - Waydroid Android app support
 - MicroG Google Services replacement
 - Aurora Store integration
@@ -251,15 +223,6 @@ We're actively looking for contributors! See [CONTRIBUTING.md](docs/CONTRIBUTING
 
 ## 📈 Installation Progress Tracking
 
-We maintain detailed logs of all installation attempts:
-
-| Date | Device | OS | Success | Log | Contributor |
-|------|--------|-----|---------|-----|-------------|
-| 2024-12-18 | OnePlus 7 Pro | Ubuntu Touch | ✅ | [Log](community/logs/op7pro_001.md) | @example |
-| 2024-12-17 | Pixel 4a 5G | PostmarketOS | ⚠️ | [Log](community/logs/pixel4a5g_001.md) | @user |
-| 2024-12-16 | PinePhone | PostmarketOS | ✅ | [Log](community/logs/pinephone_001.md) | @dev |
-
-[View all installation logs →](community/SUCCESS_STORIES.md)
 
 ## 🔗 Resources
 
@@ -269,10 +232,6 @@ We maintain detailed logs of all installation attempts:
 - [API Reference](docs/API_REFERENCE.md)
 - [Troubleshooting](community/TROUBLESHOOTING.md)
 
-### Community (Coming Soon)
-- Discord Server - *Coming Soon*
-- Matrix Room - *Coming Soon*
-- Discussion Forum - *Coming Soon*
 
 ### Related Projects
 - [PostmarketOS](https://postmarketos.org) - Linux on phones
@@ -284,10 +243,6 @@ We maintain detailed logs of all installation attempts:
 
 This project is licensed under the GNU General Public License v3.0 - see [LICENSE](LICENSE) file.
 
-### Components
-- AIROS Agent: GPLv3
-- Compatibility Fixes: Apache 2.0
-- Documentation: CC BY-SA 4.0
 
 ## ⚠️ Disclaimer
 
