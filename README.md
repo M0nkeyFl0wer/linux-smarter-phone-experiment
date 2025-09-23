@@ -4,19 +4,16 @@
 
 [![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)](https://github.com/M0nkeyFl0wer/linux-smarter-phone)
 [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da)](https://discord.gg/lsp)
 [![Docs](https://img.shields.io/badge/Docs-Read%20Documentation-orange)](docs/)
 [![Blog](https://img.shields.io/badge/Blog-Follow%20Progress-ff69b4)](https://your-blog-url-here)
 
 ## 🎯 Project Overview
-
 Linux Smart(er) Phone transforms mobile devices into machine learning collaborative development environments where chat-enabled ML agents can modify, debug, and improve the system in real-time. The project offers two main approaches:
 
 1. **LSP-Linux** (Recommended): Linux-based OS with Waydroid for Android compatibility
+
 2. **LSP-Android**: Custom Android ROM with deep system integration
-
 ### 📱 Personal Mission
-
 **I'm documenting my journey of transforming my personal OnePlus 7 Pro into a Linux Smart(er) Phone!** 
 
 I'll be:
