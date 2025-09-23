@@ -1,4 +1,4 @@
-# Getting Started Linux Smarter Phone
+# Getting Started Linux Smart(er) Phone
 
 ## Choose Your Path
 
