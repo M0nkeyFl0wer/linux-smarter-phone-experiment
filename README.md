@@ -14,7 +14,7 @@ Linux Smart(er) Phone transforms mobile devices into machine learning collaborat
 
 2. **LSP-Android**: Custom Android ROM with deep system integration
 ### 📱 Personal Mission
-**I'm documenting my journey of transforming my personal OnePlus 7 Pro into a Linux Smart(er) Phone!** 
+**I'm documenting my journey of transforming my personal OnePlus 7 Pro into a Linux Smart(er) Phone** 
 
 I'll be:
 - 📝 Installing and testing on an older phone and using it daily
@@ -26,7 +26,7 @@ I'll be:
 
 - 🤖 **ML-Powered App Fixing**: Automatically fixes compatibility issues in real-time
 - 🔓 **True System Access**: No restrictions for ML experimentation  
-- 📱 **Daily Driver Capable**: 85-95% Android app compatibility through MicroG
+- 📱 **Android Apps** Android app compatibility through MicroG
 - 🔒 **Privacy Focused**: No Google tracking, anonymous app installation
 - 🚀 **Active Development**: Community-driven with regular updates
 
