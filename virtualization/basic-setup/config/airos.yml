@@ -1,0 +1,44 @@
+# AIROS Basic Configuration
+# Virtual testing environment settings
+
+airos:
+  version: "0.1.0-alpha"
+  mode: "development"
+
+api:
+  host: "0.0.0.0"
+  port: 8080
+  cors_enabled: true
+  debug: true
+
+websocket:
+  host: "0.0.0.0"
+  port: 8081
+
+logging:
+  level: "INFO"
+  file: "/var/log/airos/agent.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Virtualization-specific settings
+virtual_mode:
+  enabled: true
+  simulate_android: true
+  mock_waydroid: true
+  demo_apps:
+    - "com.whatsapp"
+    - "com.spotify.music"
+    - "com.instagram.android"
+
+ai_agent:
+  auto_fix_enabled: true
+  learning_enabled: true
+  community_sharing: false  # Disabled in virtual mode
+
+database:
+  path: "/var/lib/airos/airos.db"
+
+mock_data:
+  enabled: true
+  sample_issues: true
+  demo_fixes: true

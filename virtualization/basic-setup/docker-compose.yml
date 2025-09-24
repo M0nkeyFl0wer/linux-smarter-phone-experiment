@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  airos-basic:
+    build:
+      context: ../../
+      dockerfile: virtualization/basic-setup/Dockerfile
+    container_name: airos-basic-vm
+    hostname: airos-phone
+    stdin_open: true
+    tty: true
+    privileged: false
+    ports:
+      - "8080:8080"   # AIROS API
+      - "8081:8081"   # WebSocket
+      - "2222:22"     # SSH (if enabled)
+    volumes:
+      - airos-data:/var/lib/airos
+      - airos-logs:/var/log/airos
+      - ./config:/etc/airos:ro
+      - ../../src:/opt/airos/src:ro
+    environment:
+      - AIROS_MODE=development
+      - ENABLE_DEBUG=true
+      - AUTO_FIX=true
+      - LOG_LEVEL=INFO
+    networks:
+      - airos-net
+    restart: unless-stopped
+
+  airos-web-ui:
+    image: nginx:alpine
+    container_name: airos-web-ui
+    ports:
+      - "3000:80"
+    volumes:
+      - ./web-ui:/usr/share/nginx/html:ro
+    depends_on:
+      - airos-basic
+    networks:
+      - airos-net
+
+volumes:
+  airos-data:
+    driver: local
+  airos-logs:
+    driver: local
+
+networks:
+  airos-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
